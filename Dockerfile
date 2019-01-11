@@ -107,6 +107,8 @@ RUN curl -L "http://tengine.taobao.org/download/tengine-$TENGINE_VERSION.tar.gz"
         && ln -sf /dev/stdout /var/log/nginx/access.log \
         && ln -sf /dev/stderr /var/log/nginx/error.log
 
+ADD nginx.conf /etc/nginx/nginx.conf        
+
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
